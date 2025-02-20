@@ -1,0 +1,83 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Götür</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="~/css/Index.css" rel="stylesheet" />
+    <script src="js/Index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img alt="Logo" height="50" src="images/götür logo.png" width="50" />
+                <span>GÖTÜR</span>
+            </div>
+            
+       </div>
+        <div class="content">
+            <div class="slide active-slide">
+                <div class="text-content">
+                    <h1>Beats Studio Kulak Üstü Beyaz Studio Kulaklık</h1>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>9.863</span>
+                    </div>
+                    <div class="buttons">
+                        <button class="buy">Satın Al</button>
+                        <button class="details">İncele</button>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img alt="Beats Studio Kulak Üstü Beyaz Studio Kulaklık" src="assets/img" />
+                </div>
+            </div>
+            <div class="slide">
+                <div class="text-content">
+                    <h1>Eyüp Sabri Tuncer Gülsuyu <br> 350 ML</h1>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>8.543</span>
+                    </div>
+                    <div class="buttons">
+                        <button class="buy">Satın Al</button>
+                        <button class="details">İncele</button>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img alt="Eyüp Sabri Tuncer Gülsuyu 350 ML" src="" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cart" class="cart">
+        <div class="cart-content">
+            <h2>Sepetim</h2>
+            <button id="close-cart">Kapat</button>
+            <div class="cart-items">
+                <p>Sepetinizde henüz ürün yok.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/js/index.js"></script> <!-- JavaScript dosyasını çağırdık -->
+</body>
+</html>

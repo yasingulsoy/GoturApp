@@ -1,0 +1,150 @@
+﻿@{
+    ViewData["Title"] = "Anasayfa";
+}
+
+    <div class="container">
+        <div class="content">
+            <div class="slide active-slide">
+                <div class="text-content">
+                    <h1>Beats Studio Kulak Üstü Beyaz Studio Kulaklık</h1>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>9.863</span>
+                    </div>
+                    <div class="buttons">
+                        <button class="buy">Satın Al</button>
+                        <button class="details">İncele</button>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img alt="Beats Studio Kulak Üstü Beyaz Studio Kulaklık" height="1000" src="images/2.png" width="600"/>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="text-content">
+                    <h1>Eyüp Sabri Tuncer Gülsuyu <br> 350 ML</h1>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>8.543</span>
+                    </div>
+                    <div class="buttons">
+                        <button class="buy">Satın Al</button>
+                        <button class="details">İncele</button>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img alt="Eyüp Sabri Tuncer Gülsuyu 350 ML" height="1000" src="images/1.png" width="600"/>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="text-content">
+                    <h1>ARALIK AYI İNDİRİMLERİ BAŞLIYOR !</h1>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i ><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>7.321</span>
+                    </div>
+                    <div class="buttons">
+                        <button class="buy">Satın Al</button>
+                        <button class="details">İncele</button>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img alt="Herhangii bir adam" height="1000" src="images/Götür Logo.png" width="600"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="anasayfa">
+        <!-- Anasayfa content -->
+    </div>
+    <div id="urunler">
+        <!-- Ürünler content -->
+    </div>
+    <div id="bayi-girisi">
+        <!-- Bayi Girişi content -->
+    </div>
+    <div id="giris-yap">
+        <!-- Giriş Yap / Kayıt Ol content -->
+    </div>
+    <div id="sss">
+        <!-- SSS content -->
+    </div>
+    <div id="yardim">
+        <!-- Yardım content -->
+    </div>
+    <div id="cart" class="cart">
+        <div class="cart-content">
+            <h2>Sepetim</h2>
+            <button id="close-cart">Kapat</button>
+            <div class="cart-items">
+                <!-- Sepet öğeleri buraya eklenecek -->
+                <p>Sepetinizde henüz ürün yok.</p>
+            </div>
+        </div>
+    </div>
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    // Slide gösterme fonksiyonu
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active-slide');
+            if (i === index) {
+                slide.classList.add('active-slide');
+            }
+        });
+    }
+
+    // Bir sonraki slide'a geçiş
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+    }
+
+    // Bir önceki slide'a geçiş
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        showSlide(currentSlide);
+    }
+
+    // Klavye ok tuşlarını dinleme
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowRight') {
+            nextSlide();
+        } else if (event.key === 'ArrowLeft') {
+            prevSlide();
+        }
+    });
+
+    // Otomatik geçiş
+    setInterval(nextSlide, 5000); // Her 5 saniyede bir slide değişimi
+
+    // Sepet ikonunu ve sepeti açma kapama işlevselliği
+    const cartIcon = document.getElementById('cart-icon');
+    const cart = document.getElementById('cart');
+    const closeCart = document.getElementById('close-cart');
+
+    // Sepet ikonuna tıklandığında sepeti aç
+    cartIcon.addEventListener('click', (event) => {
+        event.preventDefault(); // Linkin varsayılan davranışını engelle
+        cart.style.right = '0'; // Sepeti göster
+    });
+
+    // Sepeti kapat
+    closeCart.addEventListener('click', () => {
+        cart.style.right = '-300px'; // Sepeti gizle
+    });
+</script>
